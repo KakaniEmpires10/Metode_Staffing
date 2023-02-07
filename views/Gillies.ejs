@@ -1,0 +1,60 @@
+<%- include ('partial/head') %>
+<h1>Gillies Method</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <form action="/gillies" method="post">
+        <div class="mb-3 mt-4">
+          <label class="form-label" for="rata-pasien">Pasien Total</label>
+          <input name="pasienTotal" id="rata-pasien" class="form-control" type="number" min="0" required />
+        </div>
+        <div class="mb-3">
+          <label class="form-label" for="rata-pasien">Pasien Parsial</label>
+          <input name="pasienParsial" id="rata-pasien" class="form-control" type="number" min="0" required />
+        </div>
+        <div class="mb-3">
+          <label class="form-label" for="rata-pasien">Pasien Minimal</label>
+          <input name="pasienMinimal" id="rata-pasien" class="form-control" type="number" min="0" required />
+        </div>
+        <button
+          class="btn btn-md btn-primary mt-2"
+          type="submit"
+          value="submit"
+        >
+          Cari Hasil
+        </button>
+      </form>
+    </div>
+    <div class="col-md-6 page-img">
+      <img
+        class="shadow rounded form-image1"
+        width="320"
+        height="240"
+        src="/Gillies_1.png"
+        alt="gambar1"
+      />
+      <img
+        class="shadow rounded form-image2"
+        width="320"
+        height="240"
+        src="/Gillies_2.png"
+        alt="gambar2"
+      />
+    </div>
+  </div>
+  <!------------------------------- Hasil Section ----------------------------->
+
+  <% if (hasilGillie <= 0) { %>
+    <div></div>
+  <% }else { %>
+    <div class="mt-2">
+      <p><strong>Hasilnya adalah :</strong></p>
+      <div class="w-25 h-25 shadow rounded text-bg-light p-3">
+        <% hasilGillie.forEach(i => { %>
+            <p><%= i %> </p>
+        <% }); %>
+      </div>
+    </div>
+  <% } %>
+</div>
+<%- include ('partial/footer') %>

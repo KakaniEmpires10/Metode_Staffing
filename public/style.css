@@ -1,0 +1,144 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+    letter-spacing: 1px;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: radial-gradient(#ffffff00, #dae7fdae, #ffffffae, #005eff84);
+}
+
+h1 {
+    font-weight: bolder;
+    cursor: grab;
+    text-decoration: underline;
+    text-align: center;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+
+/* -------- Navbar -------- */
+.nav-bg {
+    background-image: linear-gradient(to bottom right, #0000FF, #005EFF, #006FFF, #005EFF, #0000FF);
+}
+
+.nav-link {
+    color: azure;
+    font-size: large;
+    margin-right: 10px;
+    transition: 500ms;
+
+}
+
+.nav-link:hover {
+    border-bottom-right-radius: 25px;
+    border-bottom: #fff 2px;
+    border-left: #fff 2px;
+}
+
+/* ---------------------- pages ------------------------ */
+.form-image1 {
+    position: relative;
+    top: 30px;
+    left: 30px;
+}
+
+.form-image2 {
+    position: relative;
+    left: 280px;
+    bottom: 50px;
+}
+
+.result-box{
+    background-color: #fff;
+    width: 200px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ------------------- About -------------------- */
+.about_img1 {
+    max-width: 480px;
+    max-height: 360px;
+    border-radius: 25px;
+    box-shadow: 10px 10px 30px grey;
+    position: absolute;
+    left: 60px;
+    bottom: 100px;
+}
+
+.about_img2 {
+    max-width: 480px;
+    max-height: 360px;
+    border-radius: 25px;
+    box-shadow: 10px 10px 30px grey;
+    position: absolute;
+    right: 70px;
+    top: 280px;
+}
+
+/* ------------------ footer ------------------ */
+.footer-bg {
+    background-image: linear-gradient(to right, #0000FF, #005EFF, #006FFF, #005EFF, #0000FF);
+    color: #fff;
+}
+
+/* ------------------ media query ----------------- */
+
+@media only screen and (max-width: 640px) {
+    .footer-bg {
+        font-size: small;
+    }
+}
+
+@media only screen and (max-width: 1300px) {
+    .about_img1 {
+        max-width: 352px;
+        max-height: 240px;
+    }
+
+    .about_img2 {
+        max-width: 352px;
+        max-height: 240px;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .about_img2 {
+        top: 300px;
+    }
+
+    .form-image2{
+        left: 200px;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .about_img2 {
+        display: none;
+    }
+
+    .about_img1 {
+        display: none;
+    }
+
+    .form-image2{
+        left: 100px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .page-img {
+        display: none;
+    }
+}

@@ -1,0 +1,59 @@
+<%- include ('partial/head') %>
+<h1>NINA Method</h1>
+<div class="container">
+  <div class="row my-5">
+    <div class="col-md-6">
+      <form action="/nina" method="post">
+        <div class="mb-3 mt-5">
+          <label class="form-label" for="bor">BOR (Bed Occupation Rate)</label>
+          <input
+            name="bor"
+            id="bor"
+            class="form-control"
+            type="number"
+            min="0"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <label class="form-label" for="tempat-tidur">Tempat Tidur</label>
+          <input
+            name="tempatTidur"
+            id="tempat-tidur"
+            class="form-control"
+            type="number"
+            min="0"
+            required
+          />
+        </div>
+        <button
+          class="btn btn-md btn-primary mt-2"
+          type="submit"
+          value="submit"
+        >
+          Cari Hasil
+        </button>
+      </form>
+    </div>
+    <div class="col-md-6 justify-content-center align-items-center page-img">
+      <img class="shadow rounded w-75" src="/NINA_1.png" alt="gambar1" />
+    </div>
+  </div>
+
+  <!------------------------------- Hasil Section ----------------------------->
+
+  <% if (hasilNINA <= 0) { %>
+  <div></div>
+  <% }else { %>
+  <div class="mt-2">
+    <p><strong>Hasilnya adalah :</strong></p>
+    <div class="w-25 h-25 shadow rounded text-bg-light p-3">
+      <% hasilNINA.forEach(i => { %>
+      <p id="result"><%= i %></p>
+      <% }); %>
+    </div>
+  </div>
+  <% } %>
+</div>
+
+<%- include ('partial/footer') %>

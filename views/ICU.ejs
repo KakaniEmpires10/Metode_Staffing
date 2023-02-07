@@ -1,0 +1,71 @@
+<%- include ('partial/head') %>
+
+<h1>ICU Method</h1>
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-6">
+      <form action="/icu" method="post">
+        <div class="mb-3 mt-5">
+          <label class="form-label" for="bor">BOR (Bed Occupation Rate)</label>
+          <input
+            id="bor"
+            name="bor"
+            class="form-control"
+            type="number"
+            required
+            min="0"
+            value="100"
+          />
+        </div>
+        <div class="mb-3">
+          <label class="form-label" for="tempat-tidur">Tempat Tidur</label>
+          <input
+            id="tempat-tidur"
+            name="tempatTidur"
+            class="form-control"
+            type="number"
+            min="0"
+            required
+          />
+        </div>
+        <button
+          class="btn btn-md btn-primary mt-2"
+          type="submit"
+          value="submit"
+        >
+          Cari Hasil
+        </button>
+        <!-- <button
+          class="btn btn-md btn-danger mt-2"
+          value="remove"
+        >
+          C
+        </button> -->
+      </form>
+    </div>
+    <div class="col-md-6 justify-content-center align-items-center page-img">
+      <img class="shadow rounded w-75" src="/ICU.png" alt="gambar1" />
+    </div>
+  </div>
+
+  <!------------------------------- Hasil Section ----------------------------->
+  <% if (hasilICU <= 0) { %>
+    <div></div>
+  <% }else { %>
+    <div class="mt-2">
+      <p><strong>Hasilnya adalah :</strong></p>
+      <div class="w-25 h-25 shadow rounded text-bg-light p-3">
+        <% hasilICU.forEach(i => { %>
+            <p><%= i %> </p>
+        <% }); %>
+      </div>
+    </div>
+  <% } %>
+</div>
+
+<script>
+  window.addEventListener("beforeunload", () => {
+    window.hasilICU = [];
+  })
+</script>
+<%- include ('partial/footer') %>
